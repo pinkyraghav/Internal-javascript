@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Function in JS</title>
+    </head>
+    <body>
+        <button onmouseover="getDate()">Get date</button>
+        <h1 id="Date"></h1>
+        <form id="myform">
+            <div>
+                <label>Name</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="text" id="email">
+            </div>
+            <input type="submit" value="submit">
+        </form>
+        <script>
+            /*function sayHello(){
+                alert('Hello');
+            }
+            
+            function sayHello(greeting,name){
+                alert(greeting+' '+name);  
+            }
+            sayHello('Hello','jane');
+            
+            function findsum(a,b){
+                sum = a+b;
+                alert("sum of "+ a + " and " + b +" is "+ sum)
+            }
+            findsum(4,5)
+            */
+            function getDate(){
+                var d = new Date();
+                //alert(d.getDay());
+                document.getElementById('Date').innerHTML = d;
+            }
+            function submitForm(e){
+                e.preventDefault()
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                console.log(name);
+                console.log(email)
+            }
+            document.getElementById('myform').addEventListener('submit',submitForm,false);
+        </script>
+    </body>
+</html>
